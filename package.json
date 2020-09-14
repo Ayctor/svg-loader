@@ -1,0 +1,45 @@
+{
+  "name": "svg-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/svg-loader.ssr.js",
+  "module": "dist/svg-loader.esm.js",
+  "unpkg": "dist/svg-loader.min.js",
+  "style": "dist/svg-loader.css",
+  "browser": {
+    "./sfc": "src/svg-loader.vue"
+  },
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/svg-loader.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/svg-loader.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/svg-loader.min.js",
+    "test": "jest src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git@github.com/Ayctor/svg-loader"
+  },
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
+  ],
+  "keywords": [
+    "svg"
+  ],
+  "author": "Foussikay Khalid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayctor/svg-loader/issues"
+  },
+  "homepage": "https://github.com/Ayctor/svg-loader#readme",
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@vue/test-utils": "^1.1.0",
+    "rollup": "^1.17.0",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
