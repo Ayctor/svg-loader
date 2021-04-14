@@ -1,29 +1,24 @@
-<template>
-    <svg role="img"><use :xlink:href="src" /></svg>
-</template>
-
 <script>
 export default {
-    name: 'SVGLoader',
-    props: ['src', 'classList'],
+    name: 'SvgLoader',
+
+    props: ['src'],
+
+    template: '<svg role="img"></svg>',
+
     mounted() {
-        this.setContent();
+        this.setSrc();
     },
+
     methods: {
-        setContent() {
-            if (this.classList && this.classList !== '') {
-                const classListArray = this.classList.split(' ');
-                if (classListArray && classListArray.length > 0) {
-                    classListArray.forEach(element => {
-                        this.$el.classList.add(element);
-                    });
-                }
-            }
+        setSrc() {
+            this.$el.innerHTML = `<use xlink:href="${this.src}" />`;
         },
     },
+
     watch: {
         src() {
-            this.setContent();
+            this.setSrc();
         },
     },
 };
