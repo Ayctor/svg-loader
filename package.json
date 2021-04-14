@@ -1,5 +1,5 @@
 {
-  "name": "svg-loader",
+  "name": "@ayctor/vuejs-svg-loader",
   "version": "1.0.0",
   "description": "",
   "main": "dist/svg-loader.ssr.js",
